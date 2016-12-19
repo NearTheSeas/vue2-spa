@@ -65,36 +65,24 @@
 <script>
 export default {
   name: 'workerDetail',
-  beforeCreate() {
+  beforeCreate () {
     this.$http.post('/m/workman/detail', {
       id: this.$route.params.id
     }).then((response) => {
-      // get status
-      response.status;
-      // get status text
-      response.statusText;
-      // get 'Expires' header
-      response.headers.get('Expires');
-      // set data on vm
       this.user = response.body.workman
-        // this.$set(this.user, response.body.workman);
     }, (response) => {
-      // error callback
     })
   },
   computed: {
 
   },
-  data() {
+  data () {
     return {
-      user: {},
+      user: {}
     }
   },
   methods: {
-    // 点击申请按钮触发的事件
-    apply(jobId) {
 
-    }
   }
 }
 </script>

@@ -66,18 +66,14 @@
 <script>
 export default {
   name: 'companyInterview',
-  data() {
-
+  data () {
     return {
       selected: '1',
       showEvaluate: true
     }
   },
   methods: {
-    // 点击申请按钮触发的事件
-    apply(jobId) {
 
-    }
   }
 }
 </script>

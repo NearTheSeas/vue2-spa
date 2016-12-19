@@ -105,8 +105,7 @@
 <script>
 export default {
   name: 'manageTeam',
-  data() {
-
+  data () {
     return {
       selected: '1',
       showEvaluate: false
@@ -114,7 +113,7 @@ export default {
   },
   methods: {
     // 点击申请按钮触发的事件
-    apply(jobId) {
+    apply (jobId) {
 
     }
   }

@@ -30,14 +30,14 @@ import {
 } from 'mint-ui'
 export default {
   name: 'login',
-  data() {
+  data () {
     return {
       username: '',
       password: ''
     }
   },
   methods: {
-    handleClick() {
+    handleClick () {
       this.$http.post('/m/login', {
         username: this.username,
         password: this.password
@@ -47,24 +47,24 @@ export default {
             case 'workman':
               this.$router.push({
                 path: '/userCenter'
-              });
-              break;
+              })
+              break
             case 'team':
               this.$router.push({
                 path: '/teamCenter'
-              });
-              break;
+              })
+              break
             case 'company':
               this.$router.push({
                 path: '/companyCenter'
-              });
-              break;
+              })
+              break
           }
         } else {
-          Toast(response.body.msg);
+          Toast(response.body.msg)
         }
       }, (response) => {
-        Toast(response.body.msg);
+        Toast(response.body.msg)
       })
     }
   }

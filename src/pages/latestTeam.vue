@@ -78,41 +78,41 @@
 <script>
 export default {
   name: 'latestTeam',
-  data() {
+  data () {
     // this.$http.get('../assets/fakedatas/teams.json').then(res => {
     //  this.teams = res.body.teams
     // })
     return {
       teams: [{
-        "id": "1",
-        "teamName": "兵器工业|普工",
-        "location": "西安市南郊XX路",
-        "salary": "3000",
-        "salaryUnit": "元/月",
-        "company": "西安中华工业研究所",
-        "publishDate": "2016-11-24",
-        "interviewDate": "2016-11-24",
-        "interviewTime": "8:00至12:00"
+        'id': '1',
+        'teamName': '兵器工业|普工',
+        'location': '西安市南郊XX路',
+        'salary': '3000',
+        'salaryUnit': '元/月',
+        'company': '西安中华工业研究所',
+        'publishDate': '2016-11-24',
+        'interviewDate': '2016-11-24',
+        'interviewTime': '8:00至12:00'
       }, {
-        "id": "2",
-        "teamName": "兵器工业|普工",
-        "location": "西安市南郊XX路",
-        "salary": "3000",
-        "salaryUnit": "元/月",
-        "company": "西安中华工业研究所",
-        "publishDate": "2016-11-24",
-        "interviewDate": "2016-11-24",
-        "interviewTime": "8:00至12:00"
+        'id': '2',
+        'teamName': '兵器工业|普工',
+        'location': '西安市南郊XX路',
+        'salary': '3000',
+        'salaryUnit': '元/月',
+        'company': '西安中华工业研究所',
+        'publishDate': '2016-11-24',
+        'interviewDate': '2016-11-24',
+        'interviewTime': '8:00至12:00'
       }, {
-        "id": "3",
-        "teamName": "兵器工业|普工",
-        "location": "西安市南郊XX路",
-        "salary": "3000",
-        "salaryUnit": "元/月",
-        "company": "西安中华工业研究所",
-        "publishDate": "2016-11-24",
-        "interviewDate": "2016-11-24",
-        "interviewTime": "8:00至12:00"
+        'id': '3',
+        'teamName': '兵器工业|普工',
+        'location': '西安市南郊XX路',
+        'salary': '3000',
+        'salaryUnit': '元/月',
+        'company': '西安中华工业研究所',
+        'publishDate': '2016-11-24',
+        'interviewDate': '2016-11-24',
+        'interviewTime': '8:00至12:00'
       }]
     }
   },

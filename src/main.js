@@ -11,12 +11,13 @@ import 'mint-ui/lib/style.css'
 import 'normalize.css/normalize.css'
 import 'nprogress/nprogress.css'
 import 'font-awesome/css/font-awesome.css'
-import style from './assets/css/base.css'
-// import './assets/less/global.less'
+import './assets/css/base.css'
+
+import './assets/scss/global.scss'
 
 // Use plugins
 Vue.use(Resource)
-Vue.http.options.emulateJSON = true;
+Vue.http.options.emulateJSON = true
 
 // 引入MIUI
 Vue.use(MintUI)

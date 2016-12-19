@@ -2,7 +2,7 @@
   "name": "vue2-spa",
   "description": "A Vue.js project",
   "author": "NearTheSeas",
-  "private": false,
+  "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue app task",
     "dev": "webpack-dev-server --hot --inline --progress --open",
@@ -37,10 +37,12 @@
     "html-webpack-plugin": "^2.24.1",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
+    "node-sass": "^4.1.0",
+    "sass-loader": "^4.1.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "vue-loader": "^9.9.1",
-    "webpack": "^2.1.0-beta.26",
+    "webpack": "^2.1.0-beta.28",
     "webpack-dev-server": "^2.1.0-beta.11"
   },
   "version": "1.0.0",

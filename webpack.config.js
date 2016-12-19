@@ -9,18 +9,12 @@ const config = {
   paths: {
     root: __dirname,
     source: path.join(__dirname, 'src'),
-    static: path.join(__dirname, 'static'),
+    // static: path.join(__dirname, 'static'),
     output: path.join(__dirname, 'dist'),
     publicPath: '/',
     assets: 'assets',
     index: path.join(__dirname, 'dist/index.html'),
     notfound: path.join(__dirname, 'dist/404.html')
-
-    // output: path.join(__dirname, 'wap'),
-    // publicPath: '/wap/',
-    // assets: 'assets',
-    // index: path.join(__dirname, 'wap/index.html'),
-    // notfound: path.join(__dirname, 'wap/404.html')
   },
   server: {
     port: process.env.PORT || 2368,
@@ -95,15 +89,15 @@ module.exports = {
       options: {
         loaders: {
           css: styleLoader('css'),
-          less: styleLoader('less')
+          scss: styleLoader('sass')
         }
       }
     }, {
       test: /\.css$/,
       loader: styleLoader('css')
     }, {
-      test: /\.less$/,
-      loader: styleLoader('less')
+      test: /\.scss$/,
+      loader: styleLoader('sass')
     }, {
       test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
       loader: 'url-loader',
@@ -122,7 +116,7 @@ module.exports = {
   },
   resolve: {
     modules: ['node_modules', config.paths.source],
-    extensions: ['.js', '.json', '.vue', '.css', '.less'],
+    extensions: ['.js', '.json', '.vue', '.css', '.scss'],
     alias: {
       // $: only module name
       // // runtime-only build, template option is not available.
@@ -142,7 +136,7 @@ module.exports = {
     inline: true,
     hot: true
   },
-  devtool: '#eval-source-map',
+  devtool: '#cleval-source-map',
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {

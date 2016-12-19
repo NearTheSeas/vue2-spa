@@ -70,17 +70,14 @@
 <script>
 export default {
   name: 'userCenter',
-  data() {
+  data () {
     return {
       jobs: {},
       showRefresh: false
     }
   },
   methods: {
-    // 点击申请按钮触发的事件
-    apply(jobId) {
 
-    }
   }
 }
 </script>

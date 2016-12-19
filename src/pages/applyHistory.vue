@@ -47,7 +47,7 @@
 <script>
 export default {
   name: 'applyHistory',
-  beforeCreate() {
+  beforeCreate () {
     this.$http.post('m/workman/applyHistory').then((response) => {
       this.user = response.body.workman
       this.companyHistory = response.body.companyHistory
@@ -56,7 +56,7 @@ export default {
 
     })
   },
-  data() {
+  data () {
     return {
       selected: '1',
       user: {},

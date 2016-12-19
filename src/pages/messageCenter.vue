@@ -35,19 +35,14 @@
 <script>
 export default {
   name: 'messageCenter',
-  data() {
-    // this.$http.get('http://localhost:8080/m/workman/list').then(res => {
-    //  this.workers = res.body.workmans
-    // })
+  data () {
     return {
       workers: []
     }
   },
   components: {
-    // 'app-content': Content
   },
   methods: {
-
   }
 }
 </script>

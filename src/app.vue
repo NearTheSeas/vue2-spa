@@ -11,8 +11,7 @@
     components: {
       // 'app-content': Content
     },
-
-    data() {
+    data () {
       return {
         message: 'Hello Vue!'
       }

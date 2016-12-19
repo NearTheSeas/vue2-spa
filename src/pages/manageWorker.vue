@@ -148,26 +148,22 @@
 <script>
 export default {
   name: 'manageWorker',
-  beforeCreate() {
+  beforeCreate () {
     this.$http.post('http://localhost:8080/m/team/members').then((response) => {
-
       this.busies = response.body.members.filter((element) => {
-        return element.useStatus == 'busy'
+        return element.useStatus === 'busy'
       })
-
       this.frees = response.body.members.filter((element) => {
-        return element.useStatus == 'free'
+        return element.useStatus === 'free'
       })
-
     }, (response) => {})
   },
-  data() {
+  data () {
     return {
       selected: '1',
       showEvaluate: false,
       busies: [],
       frees: [],
-      showEvaluate: false,
       showObj: null,
       userEvaluate: {
         stars: 0,
@@ -181,11 +177,11 @@ export default {
     }
   },
   methods: {
-    showDialog(obj) {
+    showDialog (obj) {
       this.showObj = obj
       this.showEvaluate = true
     },
-    submitEvalute() {
+    submitEvalute () {
       console.log(this.userEvaluate)
     }
   }

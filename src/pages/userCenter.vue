@@ -70,7 +70,7 @@
 <script>
 export default {
   name: 'userCenter',
-  beforeCreate() {
+  beforeCreate () {
     this.$http.post('/m/workman/detail').then((response) => {
       this.user = response.body.workman
         // this.$set(this.user, response.body.workman);
@@ -78,8 +78,7 @@ export default {
       // error callback
     })
   },
-  data() {
-
+  data () {
     return {
       user: {},
       showRefresh: false

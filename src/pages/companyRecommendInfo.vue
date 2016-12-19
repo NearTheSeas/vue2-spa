@@ -63,10 +63,7 @@
 <script>
 export default {
   name: 'companyRecommendInfo',
-  data() {
-    // this.$http.get('http://localhost:8080/m/workman/list').then(res => {
-    //  this.workers = res.body.workmans
-    // })
+  data () {
     return {
       workers: []
     }

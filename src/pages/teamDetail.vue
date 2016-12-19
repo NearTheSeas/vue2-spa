@@ -81,10 +81,7 @@
 <script>
 export default {
   name: 'teamDetail',
-  data() {
-    // this.$http.get('../assets/fakedatas/teams.json').then(res => {
-    //  this.team = res.body.teams[0]
-    // })
+  data () {
     return {
       team: {}
     }

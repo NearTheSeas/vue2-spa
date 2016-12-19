@@ -103,13 +103,10 @@
   </div>
 </template>
 <script>
-import {
-  MessageBox,
-  Toast
-} from 'mint-ui';
+import { MessageBox } from 'mint-ui'
 export default {
   name: 'userJoin',
-  beforeCreate() {
+  beforeCreate () {
     this.$http.post('http://localhost:8080/m/workman/joinHistory').then((response) => {
       this.user = response.body.workman
       this.companyHistory = response.body.companyHistory
@@ -118,9 +115,9 @@ export default {
 
     })
   },
-  data() {
+  data () {
     return {
-      selected: "1",
+      selected: '1',
       user: {},
       teamHistory: [],
       companyHistory: [],
@@ -140,7 +137,7 @@ export default {
     }
   },
   methods: {
-    handleClick(id, type) {
+    handleClick (id, type) {
       MessageBox.confirm('确定加入吗？').then((action) => {
         this.$http.post('/m/workman/apply', {
           groupId: id,
@@ -152,13 +149,13 @@ export default {
         })
       }, (action) => {
         console.log(action)
-      });
+      })
     },
-    showDialog(obj) {
+    showDialog (obj) {
       this.showObj = obj
       this.showEvaluate = true
     },
-    submitEvalute() {
+    submitEvalute () {
       console.log(this.userEvaluate)
     }
   }

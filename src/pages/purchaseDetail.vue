@@ -41,8 +41,7 @@
 <script>
 export default {
   name: 'purchaseDetail',
-  data() {
-
+  data () {
     return {
       jobs: {},
       showRefresh: false
@@ -50,7 +49,7 @@ export default {
   },
   methods: {
     // 点击申请按钮触发的事件
-    apply(jobId) {
+    apply (jobId) {
 
     }
   }

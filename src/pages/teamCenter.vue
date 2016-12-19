@@ -56,7 +56,7 @@
 <script>
 export default {
   name: 'userCenter',
-  beforeCreate() {
+  beforeCreate () {
     this.$http.post('http://localhost:8080/m/team/detail').then((response) => {
       this.team = response.body.team
         // this.$set(this.user, response.body.workman);
@@ -64,17 +64,13 @@ export default {
       // error callback
     })
   },
-  data() {
-
+  data () {
     return {
       team: {}
     }
   },
   methods: {
-    // 点击申请按钮触发的事件
-    apply(jobId) {
 
-    }
   }
 }
 </script>

@@ -10,7 +10,7 @@
 <script>
 export default {
   name: 'systemMsg',
-  data() {
+  data () {
     // this.$http.get('http://localhost:8080/m/workman/list').then(res => {
     //  this.workers = res.body.workmans
     // })

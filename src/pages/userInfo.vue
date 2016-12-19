@@ -78,9 +78,10 @@
   </div>
 </template>
 <script>
+import { Toast } from 'mint-ui'
 export default {
   name: 'userInfo',
-  beforeCreate() {
+  beforeCreate () {
     this.$http.post('/m/workman/detail').then((response) => {
       this.user = response.body.workman
     }, (response) => {
@@ -88,11 +89,11 @@ export default {
     })
   },
   computed: {
-    showSex: function() {
+    showSex: function () {
       return this.user.sex ? '男' : '女'
     }
   },
-  data() {
+  data () {
     return {
       dateTmp: new Date('1900/01/01'),
       user: {},
@@ -100,7 +101,7 @@ export default {
     }
   },
   methods: {
-    handleClick: function() {
+    handleClick () {
       if (this.editing) {
         this.$http.post('/m/workman/save', {
           name: this.user.name,
@@ -110,21 +111,21 @@ export default {
         }).then((response) => {
           if (response.body.code === '000') {
             this.editing = !this.editing
-            Toast('保存成功');
-            return;
+            Toast('保存成功')
+            return
           }
-          Toast(response.body.msg);
+          Toast(response.body.msg)
         }, (response) => {
-          Toast(response.body.msg);
+          Toast(response.body.msg)
         })
       } else {
         this.editing = !this.editing
       }
     },
-    openPicker() {
+    openPicker () {
       this.$refs.picker.open()
     },
-    handleConfirmDate() {
+    handleConfirmDate () {
       this.user.birthday = this.dateTmp.getFullYear() + '-' + (this.dateTmp.getMonth() + 1) + '-' + this.dateTmp.getDay()
     }
   }

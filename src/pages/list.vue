@@ -109,14 +109,11 @@
 <script>
 export default {
   name: 'list',
-  data() {
+  data () {
     return {}
   },
   methods: {
-    // 点击申请按钮触发的事件
-    apply(jobId) {
 
-    }
   }
 }
 </script>

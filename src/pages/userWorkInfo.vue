@@ -67,9 +67,10 @@
     </div>
 </template>
 <script>
+import { Toast } from 'mint-ui'
 export default {
   name: 'userWorkInfo',
-  beforeCreate() {
+  beforeCreate () {
     this.$http.post('http://localhost:8080/m/workman/detail').then((response) => {
       this.user = response.body.workman
     }, (response) => {
@@ -79,15 +80,15 @@ export default {
   computed: {
 
   },
-  data() {
+  data () {
     return {
       user: {},
       editing: false,
-      editDetail: '',
+      editDetail: ''
     }
   },
   methods: {
-    handleClick: function() {
+    handleClick () {
       if (this.editing) {
         this.$http.post('/m/workman/save', {
           mobile: this.user.mobile,
@@ -98,19 +99,19 @@ export default {
         }).then((response) => {
           if (response.body.code === '000') {
             this.editing = !this.editing
-            Toast('保存成功');
-            return;
+            Toast('保存成功')
+            return
           }
-          Toast(response.body.msg);
+          Toast(response.body.msg)
         }, (response) => {
-          Toast(response.body.msg);
+          Toast(response.body.msg)
         })
       } else {
         this.editing = !this.editing
       }
     },
-    setEditDetail(num) {
-      if (num == this.editDetail) {
+    setEditDetail (num) {
+      if (num === this.editDetail) {
         this.editDetail = ''
       } else {
         this.editDetail = num

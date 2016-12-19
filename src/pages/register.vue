@@ -69,18 +69,13 @@
   </div>
 </template>
 <script>
-import REGION_DATA from 'china-area-data'
-import {
-  Multiselect
-} from 'vue-multiselect'
-import {
-  Toast
-} from 'mint-ui'
+import { Multiselect } from 'vue-multiselect'
+import { Toast } from 'mint-ui'
 import cityData from '../components/cityData'
 
 export default {
   name: 'register',
-  data() {
+  data () {
     return {
       regType: 'workman',
       name: '',
@@ -97,28 +92,27 @@ export default {
   },
   methods: {
     // 点击申请按钮触发的事件
-    updateProvince(newSelected) {
+    updateProvince (newSelected) {
       this.province = newSelected
       let tmp = cityData.cities.filter((element) => {
-        return element.ProID == newSelected.ProID
+        return element.ProID === newSelected.ProID
       })
       this.cities = tmp
     },
-    updateCity(newSelected) {
+    updateCity (newSelected) {
       this.city = newSelected
       let tmp = cityData.areas.filter((element) => {
-        return element.CityID == newSelected.CityID
+        return element.CityID === newSelected.CityID
       })
-      console.log(tmp);
       this.areas = tmp
     },
-    updateArea(newSelected) {
+    updateArea (newSelected) {
       this.area = newSelected
     },
-    handleClick() {
+    handleClick () {
       if (!this.agree) {
-        Toast('请同意注册条约');
-        return;
+        Toast('请同意注册条约')
+        return
       }
       this.$http.post('/m/register', {
         regType: this.regType,
@@ -131,29 +125,29 @@ export default {
         address: this.address
       }).then((response) => {
         if (response.body.code === '000') {
-          Toast('注册成功');
+          Toast('注册成功')
           switch (this.regType) {
             case 'workman':
               this.$router.push({
                 path: '/userCenter'
-              });
-              break;
+              })
+              break
             case 'team':
               this.$router.push({
                 path: '/teamCenter'
-              });
-              break;
+              })
+              break
             case 'company':
               this.$router.push({
                 path: '/companyCenter'
-              });
-              break;
-              return;
+              })
+              break
           }
+          return
         }
-        Toast('注册失败');
+        Toast('注册失败')
       }, (response) => {
-        Toast('注册失败');
+        Toast('注册失败')
       })
     }
   },

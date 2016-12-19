@@ -74,7 +74,7 @@ import {
 } from 'mint-ui'
 export default {
   name: 'findJob',
-  data() {
+  data () {
     return {
       dateTmp: new Date('1900/01/01'),
       vitae: {
@@ -87,22 +87,22 @@ export default {
     }
   },
   methods: {
-    handleClick() {
+    handleClick () {
       this.$http.post('/m/workman/save', this.vitae).then((response) => {
-        if (response.body.code = '000') {
+        if (response.body.code === '000') {
           this.$router.push({
             path: '/latestJob'
           })
         }
-        Toast(response.body.msg);
+        Toast(response.body.msg)
       }, (response) => {
-        Toast(response.body.msg);
+        Toast(response.body.msg)
       })
     },
-    openPicker() {
+    openPicker () {
       this.$refs.picker.open()
     },
-    handleConfirmDate() {
+    handleConfirmDate () {
       this.vitae.birthday = this.dateTmp.getFullYear() + '-' + (this.dateTmp.getMonth() + 1) + '-' + this.dateTmp.getDay()
     }
   }

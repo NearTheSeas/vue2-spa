@@ -55,7 +55,7 @@
 <script>
 export default {
   name: 'latestWorker',
-  data() {
+  data () {
     // this.$http.get('http://localhost:8080/m/workman/list').then(res => {
     //  this.workers = res.body.workmans
     // })

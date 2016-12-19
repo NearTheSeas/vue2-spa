@@ -21,32 +21,32 @@ import {
 } from 'mint-ui'
 export default {
   name: 'supplierRegister',
-  data() {
+  data () {
     return {
       agree: false,
       mobile: '',
       code: '',
       showEvaluate: true,
       isValidate: false,
-      time: 30,
+      time: 30
     }
   },
   methods: {
     // 点击申请按钮触发的事件
-    sendCode() {
+    sendCode () {
       if (!this.mobile) {
-        Toast('请填手机号码');
-        return;
+        Toast('请填手机号码')
+        return
       }
       if (this.isValidate) {
-        return;
+        return
       }
       this.$http.post('/m/getCode', {
         mobile: this.mobile
       }).then((response) => {
         this.isValidate = true
         var that = this
-        let timer = setInterval(function() {
+        let timer = setInterval(function () {
           that.time = that.time - 1
           if (that.time <= 0) {
             clearInterval(timer)
@@ -54,20 +54,19 @@ export default {
             that.time = 30
           }
         }, 1000)
-
       }, (response) => {
         this.time = 30
         this.isValidate = false
       })
     },
-    handleClick() {
+    handleClick () {
       // if(!this.agree){
       //     Toast('请同意注册条约');
       //     return;
       // }else
       if (!this.code) {
-        Toast('请填写验证码');
-        return;
+        Toast('请填写验证码')
+        return
       }
       this.$http.post('/m/validateCode', {
         mobile: this.mobile,
@@ -79,7 +78,7 @@ export default {
           })
         }
       }, (response) => {
-        Toast('验证失败');
+        Toast('验证失败')
       })
     }
   }

@@ -63,14 +63,14 @@ import jobInfo from '../components/jobInfo'
 
 export default {
   name: 'findWorker',
-  beforeCreate() {
+  beforeCreate () {
     //   this.$http.post('/m/workman/detail').then((response) => {
     //             this.user =  response.body.workman
     //         }, (response) => {
     //             // error callback
     //         })
   },
-  data() {
+  data () {
     return {
       editing: false,
       editDetail: '',
@@ -88,14 +88,14 @@ export default {
     }
   },
   methods: {
-    setEditDetail(num) {
-      if (num == this.editDetail) {
+    setEditDetail (num) {
+      if (num === this.editDetail) {
         this.editDetail = ''
       } else {
         this.editDetail = num
       }
     },
-    handleClick() {
+    handleClick () {
       console.log(this.job)
       this.$http.post('/m/job/save', this.job).then((response) => {
         if (response.body.code === '000') {
@@ -107,28 +107,27 @@ export default {
         Toast('添加失败')
       })
     },
-    updateJobType(newVal) {
+    updateJobType (newVal) {
       if (this.job.jobType) {
         this.job.jobType = newVal
       } else {
         this.$set(this.job, 'jobType', newVal)
       }
     },
-    updateWelfare(newVal) {
-      console.log(newVal);
+    updateWelfare (newVal) {
       if (this.job.welfare) {
         this.job.welfare = newVal
       } else {
         this.$set(this.job, 'welfare', newVal)
       }
     },
-    updateUnit(newVal) {
+    updateUnit (newVal) {
       if (this.job.salaryUnit) {
         this.job.salaryUnit = newVal
       } else {
         this.$set(this.job, 'salaryUnit', newVal)
       }
-    },
+    }
   },
   components: {
     Multiselect

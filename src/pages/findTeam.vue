@@ -76,18 +76,16 @@
   </div>
 </template>
 <script>
+import { Toast } from 'mint-ui'
 export default {
   name: 'findTeam',
-  data() {
-    // this.$http.get('../assets/fakedatas/job.json').then(res => { // this.job = res.body[this.$route.params.id] // })
-
+  data () {
     return {
       teams: []
     }
   },
   methods: {
-    // 点击申请按钮触发的事件
-    apply(jobId) {
+    apply (jobId) {
       this.$http.post('后台路径', {
         userid: 'id',
         jobId: jobId
@@ -97,8 +95,8 @@ export default {
         showMeg(false)
       })
 
-      function showMeg(flag) {
-        var msg = {};
+      function showMeg (flag) {
+        var msg = {}
         if (flag) {
           msg.message = '操作成功'
           msg.class = 'success'
@@ -109,10 +107,10 @@ export default {
         let instance = Toast({
           message: msg.message,
           iconClass: 'icon icon-' + msg.class
-        });
+        })
         setTimeout(() => {
-          instance.close();
-        }, 2000);
+          instance.close()
+        }, 2000)
       }
     }
   }

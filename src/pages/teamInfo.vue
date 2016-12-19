@@ -63,17 +63,13 @@
 <script>
 export default {
   name: 'teamInfo',
-  data() {
-
+  data () {
     return {
       jobs: {}
     }
   },
   methods: {
-    // 点击申请按钮触发的事件
-    apply(jobId) {
 
-    }
   }
 }
 </script>
