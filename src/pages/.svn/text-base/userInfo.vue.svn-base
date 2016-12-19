@@ -1,0 +1,183 @@
+<template>
+  <div id="user_info">
+    <div class="header">
+      <!--<div class="user"></div>-->
+      <div class="avator">
+        <img src="../assets/images/worker.png" alt="">
+      </div>
+      <div class="evaluate">
+        <div class="starts">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="tags">
+          <span>吃苦+7</span>
+          <span>坚持+8</span>
+          <span>敬职+6</span>
+          <span>技术+9</span>
+        </div>
+      </div>
+    </div>
+    <div class="p20"></div>
+    <div class="worker_info request">
+      <div class="wrapper">
+        <span>姓名：</span><span>王大锤</span>
+      </div>
+      <div class="wrapper">
+        <span>电话：</span><span>18868986522</span>
+      </div>
+      <div class="wrapper">
+        <span>性别：</span><span>男</span>
+      </div>
+      <div class="wrapper">
+        <span>金币：</span><span>100</span>
+      </div>
+      <div class="wrapper">
+        <span>出生日期：</span><span>1989/9/16</span>
+      </div>
+      <div class="wrapper">
+        <span>身份证认证：</span><span class="icon icon-identify"></span>
+      </div>
+      <div class="wrapper">
+        <span>当前就职职业：</span><span>电焊工</span>
+      </div>
+      <div class="wrapper">
+        <span>已加入工队：</span><span>比盛建筑</span>
+      </div>
+    </div>
+    <div class="toolBar">
+      <div class="btns">
+        <a href="javascript:;" class="btn"><span>修改资料</span></a>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+    export default {
+        name: 'userInfo',
+        data() {
+            
+            return {
+                jobs: {}
+            }
+        },
+        methods: {
+            // 点击申请按钮触发的事件
+            apply(jobId) {
+               
+            }
+        }
+    }
+</script>
+<style>
+  #user_info .header {
+    border-bottom: 1px solid #eee;
+    position: relative;
+    height: 7.75rem;
+    padding: 0.625rem 0;
+  }
+  
+  #user_info .header .avator {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 3.125rem;
+    height: 3.125rem;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  #user_info .header .avator img {
+    height: 100%;
+  }
+  
+  #user_info .header .evaluate .starts {
+    margin-top: 0.325rem;
+    text-align: center;
+  }
+  
+  #user_info .header .evaluate .starts span {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: url(../assets/images/star_gray.png) no-repeat center center / cover;
+  }
+  
+  #user_info .header .evaluate .tags {
+    text-align: center;
+    margin-top: 0.25rem;
+  }
+  
+  #user_info .header .evaluate .tags span {
+    display: inline-block;
+    border: 1px solid #ff3f3f;
+    color: #ff3f3f;
+    border-radius: 5px;
+    padding: 0.25rem .5rem;
+    font-size: 0.5625rem;
+  }
+  
+  #user_info .header .evaluate .tags span+span {
+    margin-left: 0.5rem;
+  }
+  
+  #user_info .request {
+    padding-left: 0.625rem;
+  }
+  
+  #user_info .request .wrapper {
+    background: #fff;
+    font-size: 0.9375rem;
+    padding: 0.825rem 0 0.825rem 0.625rem;
+  }
+  
+  #user_info .request .wrapper {
+    border-bottom: 1px solid #eee;
+  }
+  
+  #user_info .request .wrapper .icon.icon-arrow-right {
+    float: right;
+    margin-right: 0.625rem;
+    margin-top: .25rem;
+  }
+
+  #user_info .request .wrapper span:nth-child(1) {
+      color:#818181;
+  }
+
+  #user_info .request .wrapper span:nth-child(2) {
+      float:right;
+      margin-right:1.25rem;
+  }
+  
+  #user_info .toolBar {
+    width: 100%;
+    height: 4.375rem;
+    margin-top:1.5625rem;
+  }
+  
+  #user_info .toolBar .btns {
+    padding: 0.3125rem 0.875rem;
+  }
+  
+  #user_info .toolBar .btns a {
+    float: left;
+    height: 2.8125rem;
+    min-width: 2.8125rem;
+    border-radius: 5px;
+  }
+  
+  #user_info .toolBar .btns .btn {
+    background: #ff5959;
+    font-size: 1rem;
+    padding: 0.75rem;
+    float: right;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+  }
+
+</style>

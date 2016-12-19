@@ -1,0 +1,203 @@
+<template>
+  <div id="find_job">
+    <div class="basic">
+      <div class="wrapper">
+        <div class="title">
+          <span>期望薪资:</span>
+        </div>
+        <div class="content">
+          <input type="text" placeholder="请输入期望薪资" name="" value="">
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="title">
+          <span>出生年月:</span>
+        </div>
+        <div class="content">
+          <input type="text" placeholder="请输入出生年月" name="" value="">
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="title">
+          <span>求职者:</span>
+        </div>
+        <div class="content">
+          <input type="text" placeholder="请输入工作时间" name="" value="">
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="title">
+          <span>专业技能:</span>
+        </div>
+        <div class="content">
+          <input type="text" placeholder="请输入专业技能" name="" value="">
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="title">
+          <span>联系电话:</span>
+        </div>
+        <div class="content">
+          <input type="text" placeholder="请输入联系方式" name="" value="">
+        </div>
+      </div>
+    </div>
+    <div class="toolBar">
+      <div class="btns">
+        <a href="javascript:;" class="btn"><span>提交</span></a>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+    export default {
+        name: 'findTeam',
+        data() {
+            // this.$http.get('../assets/fakedatas/job.json').then(res => {
+            //     this.job = res.body[this.$route.params.id]
+            // })
+            return {
+                jobs: [{
+                  "id": "1",
+                  "jobName": "铆焊师傅",
+                  "location": "西安",
+                  "jobType": "技工",
+                  "paveView": "10",
+                  "salary": "200",
+                  "salaryUnit": "元/小时",
+                  "company":"陕西省比盛建筑工程有限公司",
+                  "publishDate":"2016-11-24"
+              }, {
+                  "id": "2",
+                  "jobName": "汽修钣金油漆工",
+                  "location": "西安",
+                  "jobType": "技工",
+                  "paveView": "10",
+                  "salary": "200",
+                  "salaryUnit": "元/天",
+                  "company":"陕西省比盛建筑工程有限公司",
+                  "publishDate":"2016-10-12",
+                  "amount":"5人",
+                  "workTime":"星期一、星期二、星期三、星期四、星期五、星期六",
+                  "address":"西安市未央区三桥镇高堡子村"
+              }, {
+                  "id": "3",
+                  "jobName": "电梯维修工",
+                  "location": "西安",
+                  "jobType": "技工",
+                  "paveView": "10",
+                  "salary": "200",
+                  "salaryUnit": "元/小时",
+                  "company":"陕西省比盛建筑工程有限公司",
+                  "publishDate":"2016-11-24"
+              }]
+            }
+        },
+        methods: {
+            // 点击申请按钮触发的事件
+            apply(jobId) {
+                this.$http.post('后台路径', {
+                    userid: 'id',
+                    jobId: jobId
+                }).then(res => {
+                    showMeg(true)
+                }, res => {
+                    showMeg(false)
+                })
+
+                function showMeg(flag) {
+                    var msg = {};
+                    if (flag) {
+                        msg.message = '操作成功'
+                        msg.class = 'success'
+                    } else {
+                        msg.message = '操作失败'
+                        msg.class = 'fail'
+                    }
+                    let instance = Toast({
+                        message: msg.message,
+                        iconClass: 'icon icon-' + msg.class
+                    });
+                    setTimeout(() => {
+                        instance.close();
+                    }, 2000);
+                }
+            }
+        }
+    }
+</script>
+<style>
+  #find_job .basic {
+    padding-left: 1.25rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  #find_job .basic .wrapper {
+    padding: 0.625rem 0;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  #find_job .basic .wrapper+.wrapper {
+    border-top: 1px solid #eee;
+  }
+  
+  #find_job .basic .wrapper>div {
+    float: left;
+  }
+  
+  #find_job .basic .wrapper .title {
+    font-size: 0.9375rem;
+    margin-right: 0.9375rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #find_job .basic .wrapper .content {
+    padding-left: 6.25rem;
+    padding-right: 1.25rem;
+    width: 100%;
+  }
+  
+  #find_job .basic .wrapper .content input {
+    border: 1px solid #818181;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    padding: 0.625rem;
+  }
+  
+  #find_job .basic .wrapper .content input:focus {
+    outline: none;
+  }
+  
+  #find_job .toolBar {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 4.375rem;
+  }
+  
+  #find_job .toolBar .btns {
+    padding: 0.3125rem 0.875rem;
+  }
+  
+  #find_job .toolBar .btns a {
+    float: left;
+    height: 2.8125rem;
+    min-width: 2.8125rem;
+    border-radius: 5px;
+  }
+  
+  #find_job .toolBar .btns .btn {
+    background: #ff5959;
+    font-size: 1.5rem;
+    padding: 0.625rem;
+    float: right;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+  }
+
+</style>

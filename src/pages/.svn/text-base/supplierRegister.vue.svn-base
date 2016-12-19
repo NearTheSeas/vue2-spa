@@ -1,0 +1,87 @@
+<template>
+    <div id="supplier_register">
+        <div class="username">
+            <input type="" name="" value="" placeholder="手机号">
+            <button class="sendCode">发送验证码</button>
+        </div>
+        <div class="captcha">
+            <input type="" name="" value="" placeholder="验证码">
+        </div>
+        <div class="btns">
+            <mt-button size="large" type="primary">验证</mt-button>
+        </div>
+        <div class="agreements">
+            <i class="agree"></i><span>我已同意条约</span>
+        </div>
+    </div>
+</template>
+<script>
+    export default {
+        name: 'supplierRegister',
+        data() {
+            return {
+                selected: '1',
+                showEvaluate:true
+            }
+        },
+        methods: {
+            // 点击申请按钮触发的事件
+            apply(jobId) {
+               
+            }
+        }
+    }
+</script>
+<style>
+    #supplier_register {
+        padding: 3.75rem 2.25rem;
+    }
+    
+    #supplier_register .username input,
+    #supplier_register .captcha input {
+        border: 2px solid #000;
+        width: 100%;
+        padding: 0.75rem;
+        padding-left: 1.25rem;
+        border-radius: 5px;
+    }
+    
+    #supplier_register .username input:focus,
+    #supplier_register .captcha input:focus{
+        outline: none;
+    }
+
+    #supplier_register .username {
+        position: relative;
+    }
+    
+    #supplier_register .username .sendCode {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #ff5959;
+        color: #fff;
+        border:0;
+        font-size: 0.75rem;
+        padding:5px;
+    }
+    
+    #supplier_register .captcha {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    #supplier_register .agreements {
+        font-size: 0.75rem;
+        margin-top:1rem;
+    }
+
+    #supplier_register .agreements .agree {
+        display: inline-block;
+        width:10px;
+        height:10px;
+        background: url(../assets/images/agree_no.png) center center / contain;
+        margin-right:0.3125rem;
+    }
+</style>

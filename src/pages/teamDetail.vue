@@ -1,0 +1,265 @@
+<template>
+  <div id="team_detail">
+    <header>
+      <img src="../assets/images/latestJob.png" alt="">
+    </header>
+    <div class="content">
+      <div class="team-item">
+        <div class="team">
+          <div class="name">
+            <div>{{team.teamName}}</div>
+          </div>
+          <div class="detail">
+            <div><i class="icon icon-person"></i><span>5人</span></div>
+            <div><i class="icon icon-time"></i><span>星期一 至 星期六</span></div>
+          </div>
+        </div>
+        <div class="address">
+          <i class="icon icon-location3"></i> <span>西安市未央区三桥镇高堡子村</span> <i class="icon icon-arrow-right"></i>
+        </div>
+      </div>
+      <div class="request">
+        <div class="wrapper">
+          <span>你需要做什么？</span>
+          <i class="icon icon-arrow-right"></i>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="wrapper">
+          <span>你能做什么？</span>
+          <i class="icon icon-arrow-right"></i>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="wrapper">
+          <span>录用条件</span>
+          <i class="icon icon-arrow-right"></i>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="wrapper">
+          <span>多行列表</span>
+          <i class="icon icon-arrow-right"></i>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="counts">
+        <span>已有1320个人报名</span>
+      </div>
+    </div>
+    <div class="toolBar">
+      <div class="p30"></div>
+      <div class="btns">
+        <a href="javascript:;" class="tel">
+          <i></i>
+        </a>
+        <a href="javascript:;" class="msg">
+          <i></i>
+        </a>
+        <a href="javascript:;" class="btn"><span>申请职位</span></a>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  name: 'teamDetail',
+  data() {
+    // this.$http.get('../assets/fakedatas/teams.json').then(res => {
+    //  this.team = res.body.teams[0]
+    // })
+    return {
+      team: {}
+    }
+  },
+  components: {
+    // 'app-content': Content
+  },
+  methods: {
+
+  }
+}
+</script>
+<style>
+#team_detail header {
+  width: 100%;
+  position: relative;
+}
+
+#team_detail header img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+#team_detail .content {
+  width: 100%;
+  background: #f0f0f0;
+  padding-top: 0.625rem;
+  /*padding-bottom: 0.625rem;*/
+}
+
+#team_detail .content>ul>li {
+  margin-bottom: 0.625rem;
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+}
+
+#team_detail .team-item {
+  background: #fff;
+  margin-bottom: 0.625rem;
+}
+
+#team_detail .team-item .team {
+  margin-left: 1.25rem;
+  position: relative;
+  border-bottom: 1px solid #eee;
+}
+
+#team_detail .team-item .team .name {
+  font-size: 1.125rem;
+  padding: 0.625rem 0;
+  color: #000;
+}
+
+#team_detail .team-item .detail {
+  font-size: 0.875rem;
+  /*padding-left: 0.625rem;*/
+}
+
+#team_detail .team-item .detail>div {
+  line-height: 1.25rem;
+  height: 1.25rem;
+  color: #7d7d7d;
+  margin-bottom: 0.625rem;
+}
+
+#team_detail .team-item .detail .icon {
+  float: left;
+  margin-right: 0.9375rem;
+}
+
+#team_detail .team-item .address {
+  /*padding: 0.625rem;*/
+  font-size: 0.875rem;
+  height: 2.8125rem;
+  line-height: 2.8125rem;
+  padding-left: 1.25rem;
+  color: #7d7d7d;
+}
+
+#team_detail .team-item .address .icon:nth-child(1) {
+  float: left;
+  margin-top: 0.625rem;
+  margin-right: 0.625rem;
+}
+
+#team_detail .team-item .address .icon:nth-child(3) {
+  float: right;
+  margin-right: 0.625rem;
+  margin-top: 1rem;
+}
+
+#team_detail .request .wrapper {
+  background: #fff;
+  font-size: 0.9375rem;
+  padding: 0.825rem 0 0.825rem 1.25rem;
+}
+
+#team_detail .request .wrapper {
+  border-bottom: 1px solid #eee;
+}
+
+#team_detail .request .wrapper .icon.icon-arrow-right {
+  float: right;
+  margin-right: 0.625rem;
+  margin-top: .25rem;
+}
+
+#team_detail .counts {
+  background: #fff;
+  padding: 1.6rem 1.25rem;
+  font-size: 1.125rem;
+  position: relative;
+}
+
+#team_detail .counts span {
+  display: block;
+  color: #fff;
+  background: #ffbdbe;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0.8125rem 0;
+  /*position: absolute;
+      top:50%;
+      transform: translateY(-50%);*/
+}
+
+#team_detail .toolBar {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 4.375rem;
+}
+
+#team_detail .toolBar .btns {
+  padding: 0.3125rem 0.875rem;
+}
+
+#team_detail .toolBar .btns a {
+  float: left;
+  height: 2.8125rem;
+  min-width: 2.8125rem;
+  border-radius: 5px;
+}
+
+#team_detail .toolBar .btns .tel {
+  background: #3ebefb;
+  margin-right: 0.625rem;
+}
+
+#team_detail .toolBar .btns .tel i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../assets/images/phone.png) no-repeat center center / 1.875rem 1.875rem;
+}
+
+#team_detail .toolBar .btns .msg {
+  background: #3ebefb;
+}
+
+#team_detail .toolBar .btns .msg i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../assets/images/message.png) no-repeat center center / 1.875rem 1.875rem;
+}
+
+#team_detail .toolBar .btns .btn {
+  background: #ff5959;
+  font-size: 1.5rem;
+  padding: 0.625rem;
+  float: right;
+  color: #fff;
+  width: 13.625rem;
+  text-align: center;
+}
+</style>

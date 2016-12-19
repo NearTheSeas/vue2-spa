@@ -1,0 +1,341 @@
+<template>
+    <div id="manage_worker">
+        <mt-navbar v-model="selected">
+            <mt-tab-item id="1">空闲50人</mt-tab-item>
+            <mt-tab-item id="2">忙碌38人</mt-tab-item>
+        </mt-navbar>
+        <!-- tab-container -->
+        <mt-tab-container v-model="selected">
+            <mt-tab-container-item id="1">
+                <ul class="lists">
+                    <li>
+                        <div class="info">
+                            <div class="avator">
+                                <img src="../assets/images/worker.png" alt="">
+                            </div>
+                            <span>李立</span><span>男</span><span>普工</span>
+                        </div>
+                        <div class="state">
+                            <i></i><span>空闲</span>
+                        </div>
+                        <div class="evaluate">
+                            <i class="icon icon-evaluate"></i><span>评论</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <div class="avator">
+                                <img src="../assets/images/worker.png" alt="">
+                            </div>
+                            <span>李立</span><span>男</span><span>普工</span>
+                        </div>
+                        <div class="state">
+                            <i></i><span>空闲</span>
+                        </div>
+                        <div class="evaluate">
+                            <i class="icon icon-evaluate"></i><span>评论</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <div class="avator">
+                                <img src="../assets/images/worker.png" alt="">
+                            </div>
+                            <span>李立</span><span>男</span><span>普工</span>
+                        </div>
+                        <div class="state">
+                            <i></i><span>空闲</span>
+                        </div>
+                        <div class="evaluate">
+                            <i class="icon icon-evaluate"></i><span>评论</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <div class="avator">
+                                <img src="../assets/images/worker.png" alt="">
+                            </div>
+                            <span>李立</span><span>男</span><span>普工</span>
+                        </div>
+                        <div class="state">
+                            <i></i><span>空闲</span>
+                        </div>
+                        <div class="evaluate">
+                            <i class="icon icon-evaluate"></i><span>评论</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <div class="avator">
+                                <img src="../assets/images/worker.png" alt="">
+                            </div>
+                            <span>李立</span><span>男</span><span>普工</span>
+                        </div>
+                        <div class="state">
+                            <i></i><span>空闲</span>
+                        </div>
+                        <div class="evaluate">
+                            <i class="icon icon-evaluate"></i><span>评论</span>
+                        </div>
+                    </li>
+                </ul>
+            </mt-tab-container-item>
+            <mt-tab-container-item id="2">
+                <ul class="lists">
+                    <li>
+                        <div class="info">
+                            <div class="avator">
+                                <img src="../assets/images/worker.png" alt="">
+                            </div>
+                            <span>李立</span><span>男</span><span>普工</span>
+                        </div>
+                        <div class="state">
+                            <i></i><span>忙碌</span>
+                        </div>
+                        <div class="evaluate">
+                            <i class="icon icon-evaluate"></i><span>评论</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <div class="avator">
+                                <img src="../assets/images/worker.png" alt="">
+                            </div>
+                            <span>李立</span><span>男</span><span>普工</span>
+                        </div>
+                        <div class="state">
+                            <i></i><span>忙碌</span>
+                        </div>
+                        <div class="evaluate">
+                            <i class="icon icon-evaluate"></i><span>评论</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <div class="avator">
+                                <img src="../assets/images/worker.png" alt="">
+                            </div>
+                            <span>李立</span><span>男</span><span>普工</span>
+                        </div>
+                        <div class="state">
+                            <i></i><span>忙碌</span>
+                        </div>
+                        <div class="evaluate">
+                            <i class="icon icon-evaluate"></i><span>评论</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <div class="avator">
+                                <img src="../assets/images/worker.png" alt="">
+                            </div>
+                            <span>李立</span><span>男</span><span>普工</span>
+                        </div>
+                        <div class="state">
+                            <i></i><span>忙碌</span>
+                        </div>
+                        <div class="evaluate">
+                            <i class="icon icon-evaluate"></i><span>评论</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <div class="avator">
+                                <img src="../assets/images/worker.png" alt="">
+                            </div>
+                            <span>李立</span><span>男</span><span>普工</span>
+                        </div>
+                        <div class="state">
+                            <i></i><span>忙碌</span>
+                        </div>
+                        <div class="evaluate">
+                            <i class="icon icon-evaluate"></i><span>评论</span>
+                        </div>
+                    </li>
+                </ul>
+            </mt-tab-container-item>
+        </mt-tab-container>
+        <div class="modal-wrapper" v-show="showEvaluate">
+            <div class="modal-box">
+                <span class="modal-close" v-on:click="showEvaluate = false">X</span>
+                <div class="evaluate">
+                    <div class="title">企业对我的评价</div>
+                    <div class="stars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="tags">
+                        <span>吃苦</span>
+                        <span>坚持</span>
+                        <span>敬业</span>
+                        <span>精神</span>
+                    </div>
+                </div>
+                <div class="evaluate">
+                    <div class="title">我对企业的评价</div>
+                    <div class="stars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="tags">
+                        <span>福利好</span>
+                        <span>待遇好</span>
+                        <span>薪资高</span>
+                        <span>老板好</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal"></div>
+        </div>
+        <div class="toolbar">
+            <div><mt-button type="primary" size="large">分配任务</mt-button></div>
+            <div><mt-button type="danger" size="large">任务完成</mt-button></div>
+        </div>
+    </div>
+</template>
+<script>
+    export default {
+        name: 'manageWorker',
+        data() {
+            
+            return {
+                selected: '1',
+                showEvaluate:true
+            }
+        },
+        methods: {
+            // 点击申请按钮触发的事件
+            apply(jobId) {
+               
+            }
+        }
+    }
+</script>
+<style>
+    #manage_worker .mint-navbar .mint-tab-item {
+        background: #eaeaea;
+    }
+    
+    #manage_worker .mint-navbar .mint-tab-item .mint-tab-item-label {
+        font-size: 1.125rem;
+        color: #818181;
+    }
+    
+    #manage_worker .mint-navbar .mint-tab-item+.mint-tab-item {
+        border-left: 1px solid #ddd;
+    }
+    
+    #manage_worker .mint-navbar .mint-tab-item.is-selected {
+        color: #26a2ff;
+        background: #fff;
+        margin-bottom: 0;
+        border-bottom: 0;
+    }
+    
+    #manage_worker .mint-tab-container-wrap {
+        background: #efefef;
+    }
+    
+    #manage_worker .lists li {
+        background: #fff;
+        margin-top: 0.625rem;
+        padding: 0.625rem 1.25rem;
+        overflow: hidden;
+        font-size: 15px;
+    }
+    
+    #manage_worker .lists li .info {
+        float: left;
+    }
+    
+    #manage_worker .lists li .avator {
+        float: left;
+        width: 2.5rem;
+        height: 2.5rem;
+        text-align: center;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #dadada;
+        margin-right: 1.25rem;
+    }
+    
+    #manage_worker .lists li .avator img {
+        height: 100%;
+    }
+    
+    #manage_worker .lists li .info span {
+        display: inline-block;
+        height: 2.5rem;
+        line-height: 2.5rem;
+    }
+    
+    #manage_worker .lists li .info span+span {
+        margin-left: 1.25rem;
+    }
+    
+    #manage_worker .lists li .state {
+        float: left;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        color: #f59508;
+        margin-left: 1.25rem;
+    }
+    
+    #manage_worker .lists li .state i {
+        width: 1.75rem;
+        height: 1.75rem;
+        float: left;
+        margin-top: 6px;
+        margin-right: 0.3125rem;
+        border-radius: 5px;
+        border: 2px solid #f59508;
+    }
+    
+    #manage_worker .lists li .evaluate {
+        float: right;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        color: #ff5959;
+    }
+    
+    #manage_worker .lists li .evaluate i {
+        float: left;
+        margin-top: 6px;
+        margin-right: 0.3125rem;
+    }
+    
+    #manage_worker .modal-box .evaluate {
+        text-align: center;
+        margin: 1rem 0.625rem 0;
+        border-top: 1px solid #ddd;
+        position: relative;
+        padding-top: 1rem;
+    }
+    
+    #manage_worker .modal-box .evaluate .title {
+        position: absolute;
+        top: -.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff;
+        padding: 0 .5rem;
+    }
+
+    #manage_worker .toolbar {
+        position: absolute;
+        bottom:0;
+        width:100%;
+    }
+
+    #manage_worker .toolbar div {
+        width:50%;
+        float:left;
+        padding:0.625rem;
+    }
+</style>

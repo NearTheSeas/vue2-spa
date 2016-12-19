@@ -1,0 +1,73 @@
+<template>
+  <div class="tmpList">
+    <ul>
+      <li>
+        <router-link :to="{name: 'login'}"><i class="fa fa-star"></i>login </router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'userCenter', params: { id: 1 }}"><i class="fa fa-star">userCenter</i></router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'userInfo', params: { id: 1 }}"><i class="fa fa-star">userInfo</i></router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'userJoin', params: { id: 1 }}"><i class="fa fa-star">userJoin</i></router-link>
+      </li>
+       <li>
+        <router-link :to="{ name: 'applyHistory', params: { id: 1 }}"><i class="fa fa-star">applyHistory</i></router-link>
+      </li>
+      <li>
+        <router-link :to="{name: 'latestJob'}"><i class="fa fa-star">latestJob</i> </router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'jobDetail', params: { id: 1 }}"><i class="fa fa-star">jobDetail</i></router-link>
+      </li>
+      <li>
+        <router-link :to="{name: 'findJob'}"><i class="fa fa-star"></i>findJob</router-link>
+      </li>
+      <li>
+        <router-link :to="{name: 'latestWorker'}"><i class="fa fa-star"></i>latestWorker</router-link>
+      </li>
+      <li>
+        <router-link :to="{name: 'workerDetail', params: { id: 1 }}"><i class="fa fa-star"></i>workerDetail</router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'teamCenter', params: { id: 1 }}"><i class="fa fa-star">teamCenter</i></router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'teamInfo', params: { id: 1 }}"><i class="fa fa-star">teamInfo</i></router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'manageWorker', params: { id: 1 }}"><i class="fa fa-star">manageWorker</i></router-link>
+      </li>
+      <li>
+        <router-link :to="{name: 'latestTeam'}"><i class="fa fa-star"></i>latestTeam</router-link>
+      </li>
+      <li>
+        <router-link :to="{name: 'teamDetail', params: { id: 1 }}"><i class="fa fa-star"></i>teamDetail </router-link>
+      </li>
+       <li>
+        <router-link :to="{name: 'findTeam'}"><i class="fa fa-star"></i>findTeam</router-link>
+      </li>
+    </ul>
+  </div>
+</template>
+<script>
+    export default {
+        name: 'list',
+        data() {
+            return {}
+        },
+        methods: {
+            // 点击申请按钮触发的事件
+            apply(jobId) {
+               
+            }
+        }
+    }
+</script>
+<style>
+    .tmpList ul li {
+        padding:20px;
+    }
+</style>
